@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bg-blue-c-white {
+  background:#1976d2;
+  color:white;
+}
+.bg-blue {
+  background: #1976d2;
+}
+.no-margin-bottom {
+  margin-bottom: 0px;
+}
+.no-padding {
+  padding: 0px;
+}
+.padding-top10 {
+  padding-top:10px;
+}
+
