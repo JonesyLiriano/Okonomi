@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    path: 'home',
+    loadChildren: () => import('./core/landing-page/landing-page.module').then(m => m.LandingPageModule)
   },
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
+  { path: '', pathMatch: 'full', redirectTo: 'home' }
 
 ];
 

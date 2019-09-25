@@ -9,11 +9,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [FooterComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -35,6 +37,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    NgbModule]
+    NgbModule,
+  FooterComponent]
 })
 export class SharedModule { }
