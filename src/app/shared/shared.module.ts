@@ -10,6 +10,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,6 +29,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     NgbModule
   ],
   exports: [CommonModule,
@@ -37,6 +43,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     NgbModule,
   FooterComponent]
 })

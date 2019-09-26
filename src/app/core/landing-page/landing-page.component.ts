@@ -9,18 +9,26 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-
-
    isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
 
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
   }
+
   scrollToElement($target): void {
     $target.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
+  onClickSubmit() {
+
   }
 }
