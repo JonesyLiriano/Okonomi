@@ -15,8 +15,8 @@
       <a mat-list-item href="#">Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
+  <mat-sidenav-content #content cdkScrollable>
+    <mat-toolbar #toolbara class="fixed" color="primary">
 
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
@@ -24,7 +24,7 @@
       </button>
       <span *ngIf="(isHandset$ | async) === true" class="example-fill-remaining-space"></span>
       <img class="logo-brand" src="../../assets/img/logo_brand_2.jpg" />
-      <span>Okonomi Web Services</span>
+      <span (click)="scrollToTop()">Okonomi Web Services</span>
       <span *ngIf="(isHandset$ | async) === true" class="example-fill-remaining-space"></span>
       <div *ngIf="(isHandset$ | async) === false">
         <a class="margin-lr-5" mat-button (click)="scrollToElement(aboutUs)">Sobre nosotros</a>
@@ -244,7 +244,7 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="full-width">
                       <mat-label>Telefono</mat-label>
-                      <input formControlName="phone" matInput type="text" placeholder="Telefono">
+                      <input formControlName="phone" matInput type="tel" pattern="\d*" placeholder="Telefono">
                       <button mat-button *ngIf="phone.value" matSuffix mat-icon-button aria-label="Clear"
                         (click)="phone.setValue('')">
                         <mat-icon>close</mat-icon>

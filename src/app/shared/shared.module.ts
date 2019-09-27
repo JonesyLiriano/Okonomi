@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -34,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ScrollingModule
   ],
   exports: [CommonModule,
     MatToolbarModule,
@@ -50,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-  FooterComponent]
+  FooterComponent,
+  ScrollingModule]
 })
 export class SharedModule { }
