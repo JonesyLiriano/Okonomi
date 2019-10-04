@@ -12,11 +12,11 @@
       <a mat-list-item (click)="scrollToElement(whyUs)">Por que nosotros?</a>
       <a mat-list-item (click)="scrollToElement(contact)">Contactanos</a>
       <a mat-list-item href="#">Log in</a>
-      <a mat-list-item href="#">Registrarse</a>
+      <a mat-list-item (click)="scrollToElement(offers)">Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content #content cdkScrollable>
-    <mat-toolbar #toolbara class="fixed" color="primary">
+  <mat-sidenav-content #content>
+    <mat-toolbar class="sticky" color="primary">
 
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
@@ -35,7 +35,7 @@
       <span class="example-fill-remaining-space"></span>
       <div *ngIf="(isHandset$ | async) === false">
         <a class="margin-lr-5" mat-button>Log in</a>
-        <a class="margin-lr-5" mat-raised-button>Registarse</a>
+        <a class="margin-lr-5" mat-raised-button (click)="scrollToElement(offers)">Registarse</a>
       </div>
     </mat-toolbar>
 
@@ -68,19 +68,16 @@
           <div class="col-md-6 col-lg-4 mb-5">
             <i class="fa fa-camera-retro fa-4x orange-text"></i>
             <h4 class="my-4 font-weight-bold">MISION</h4>
-            <ul class="lead list-unstyled mt-3 mb-4 text-muted justify-content-center">
-              <li>Brindar el mejor servicio posible.</li>
-              <li>Hacer más fácil la labor de administrar un negocio.</li>
-              <li>Darle al usuario todo lo que necesita para manejar su negocio efectivamente e inteligentemente.</li>
-            </ul>
+              <p class="lead text-muted justify-content-center">
+                Darle al usuario todo lo que necesita para manejar su negocio efectivamente e inteligentemente.
+              </p>
           </div>
           <div class="col-md-6 col-lg-4 mb-1">
             <i class="fa fa-heart fa-4x orange-text"></i>
             <h4 class="my-4 font-weight-bold">VISION</h4>
             <p class="lead text-muted justify-content-center">
-              Poder llegar a ser la aplicación web número 1 en el mundo en el área de los negocios y para la
-              administración del mismo, Brindando el mejor servicio y todas las herramientas necesaria para manejar tu
-              negocio. A un precio asequible para todo los usuarios.
+              Ser la aplicación web número uno en el mundo en el área de los negocios y para la
+              administración del mismo.
             </p>
           </div>
           <div class="col-md-12 mb-1 col-xs-12 col-lg-4">
@@ -214,7 +211,7 @@
           </div>
           <div class="col-lg-12">
             <mat-card>
-              <form [formGroup]="contactForm" (ngSubmit)="onClickSubmit()">
+              <form [formGroup]="contactForm" #formDirective="ngForm" (ngSubmit)="onClickSubmit(formDirective)">
                 <div class="row">
                   <div class="col-md-6">
                     <mat-form-field appearance="outline" class="full-width">
@@ -284,6 +281,14 @@
         </div>
       </div>
     </section>
+    <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="##1976d2"
+  type="ball-climbing-dot"
+>
+  <p id="p-spinnner">Cargando...</p>
+</ngx-spinner>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

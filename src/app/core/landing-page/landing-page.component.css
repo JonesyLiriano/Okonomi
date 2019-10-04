@@ -2,7 +2,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   padding: 0;
   margin: 0;
@@ -13,17 +12,8 @@ body * {
 .mat-toolbar.mat-accent {
   background-color: transparent;
 }
-.fixed {
-  position: absolute !important;
-  background-color: transparent !important;
-  top: 0;
-  z-index: 5;
-  margin-top: 0.90%;
-  align-content: center;
-  color: #1976d2;
-}
 .sticky {
-  position: sticky !important;
+  position: fixed !important;
   position: -webkit-sticky;
   top: 0;
   z-index: 5;
@@ -156,3 +146,7 @@ textarea{
   .full-width {
     width: 100%;
   }
+#p-spinner {
+  font-size: 20px;
+  color: "#1976d2"
+}
