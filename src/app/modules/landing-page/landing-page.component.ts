@@ -7,6 +7,7 @@ import { phoneNumberValidator } from '../../shared/validators/phone-validator';
 import { HttpRequestsService } from '../../services/http-requests.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { PrincipalNavService } from 'src/app/services/principal-nav.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -39,7 +40,9 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private breakpointObserver: BreakpointObserver, private fb: FormBuilder,
               private httpRequestsService: HttpRequestsService, private toastr: ToastrService,
-              private spinner: NgxSpinnerService) { }
+              private spinner: NgxSpinnerService, private principalNavService: PrincipalNavService) {
+                this.principalNavService.setActiveNav(false);
+               }
 
   ngOnInit(): void {
   }

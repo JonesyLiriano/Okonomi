@@ -1,0 +1,152 @@
+<div class="h-100 bg-registrer">
+  <div class="row d-flex justify-content-center w-100 h-100">
+    <div class="col-xs-10 col-md-8 col-lg-8 d-flex align-items-center">
+        <mat-card class="shipping-card">
+            <mat-card-content>
+          <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+              <mat-horizontal-stepper [linear]="false">
+                  <mat-step>
+            <ng-template matStepLabel>Datos</ng-template>
+                <div class="row">
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Empresa</mat-label>
+                      <input matInput placeholder="Empresa" formControlName="company">
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>RNC</mat-label>
+                        <input matInput placeholder="RNC" formControlName="company">
+                      </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Nombre</mat-label>
+                      <input matInput placeholder="Nombre" formControlName="lastName">
+                      <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                        Nombre es <strong>requerido</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Direccion</mat-label>
+                      <textarea matInput placeholder="Direccion" formControlName="address"></textarea>
+                      <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+                        La direccion es <strong>requerida</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Sector</mat-label>
+                      <input matInput placeholder="Sector" formControlName="city">
+                      <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
+                        Sector es <strong>requerido</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Provincia</mat-label>
+                      <mat-select placeholder="Provincia" formControlName="state">
+                        <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                          {{ state.name }}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
+                        Provincia es <strong>requerida</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Telefono#1</mat-label>
+                        <input matInput placeholder="Telefono#1" formControlName="lastName">
+                        <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                          Telefono es <strong>requerido</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Telefono#2</mat-label>
+                        <input matInput placeholder="Telefono#2" formControlName="lastName">
+                        <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                          Telefono es <strong>requerido</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel>Plan</ng-template>
+                <div class="row">
+                  <div class="col">
+                    <mat-radio-group formControlName="shipping">
+                      <mat-radio-button value="free">Estandar</mat-radio-button>
+                      <mat-radio-button value="priority">Pro</mat-radio-button>
+                      <mat-radio-button value="nextday">Plus</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                </div>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Cuenta</ng-template>
+                    <div class="col">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                          <input matInput placeholder="Email" formControlName="lastName">
+                          <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                            Email es <strong>requerido</strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Cpnfirmar email</mat-label>
+                        <input matInput placeholder="Confirmar email" formControlName="lastName">
+                        <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                          Email es <strong>requerido</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Contraseña</mat-label>
+                          <input matInput placeholder="Contraseña" formControlName="lastName">
+                          <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                            Contraseña es <strong>requerido</strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                          <mat-form-field appearance="outline" class="full-width">
+                              <mat-label>Confirmar contraseña</mat-label>
+                            <input matInput placeholder="Confirmar contraseña" formControlName="lastName">
+                            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                              Contraseña es <strong>requerido</strong>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div class="col">
+
+                          </div>
+                </mat-step>
+                </mat-horizontal-stepper>
+        </form>
+    </mat-card-content>
+  </mat-card>
+
+    </div>
+  </div>
+</div>

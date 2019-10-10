@@ -1,0 +1,52 @@
+<div class="h-100 bg-login">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-xs-10 col-md-8 col-lg-4">
+      <mat-card>
+        <mat-card-header class="justify-content-center text-center">
+          <mat-card-title>
+            <div class="row">
+            <img src="../../assets/img/login_icon.png" width="150" height="150  "/>
+            </div>
+            Login
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="loginForm" #formDirective="ngForm" (ngSubmit)="onClickSubmit(formDirective)">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput type="email" placeholder="Email">
+              <button mat-button *ngIf="email.value" matSuffix mat-icon-button aria-label="Clear"
+                (click)="email.setValue('')">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-error *ngIf="(email.dirty || email.touched) && email.invalid && !!email.errors.required">
+                El email es requerido.
+              </mat-error>
+              <mat-error *ngIf="(email.dirty || email.touched) && email.invalid && !!email.errors.email">
+                Tiene que ser un email valido.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput type="password" placeholder="Password">
+              <button mat-button *ngIf="password.value" matSuffix mat-icon-button aria-label="Clear"
+                (click)="password.setValue('')">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-error *ngIf="(password.dirty || password.touched) && password.invalid && !!password.errors.required">
+                El password es requerido.
+              </mat-error>
+            </mat-form-field>
+            <div class="text-center">
+              <button class="btn btn-lg btn-primary full-width text-uppercase" type="submit"
+                [disabled]="!loginForm.valid">Entrar</button>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-lg btn-secondary full-width text-uppercase mt-3">Registrarse</button>
+              </div>
+          </form>
+          </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
